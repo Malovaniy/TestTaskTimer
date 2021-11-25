@@ -1,0 +1,13 @@
+<main class="home">
+     <div class="row">
+          <p> <span *ngIf="time.min<10">0</span>{{time.min}}:</p>
+          <p><span *ngIf="time.sec<10">0</span>{{time.sec}}</p>
+     </div>
+     <div class="row">
+
+          <button (click)="start()">Start/Stop</button>
+          <button (click)='wait($event)'>Wait</button>
+          <button (click)="reset()">Reset</button>
+     </div>
+
+</main>
