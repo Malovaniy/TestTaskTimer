@@ -18,20 +18,20 @@ export class TimeService {
   public time: ITime = { min: 0, sec: 0 }
   constructor(private http: HttpClient) { }
 
-  start(): Observable<any> {
+  start(): Observable<ITime> {
     this.time.sec++
     if (this.time.sec === 60) {
       this.time.min++
       this.time.sec = 0
     }
-    return this.http.post<any>(this.api.time, this.time);
+    return this.http.post<ITime>(this.api.time, this.time);
   }
 
-  reset(): Observable<any> {
+  reset(): Observable<ITime> {
     this.time = {
       min: 0,
       sec: 0
     }
-    return this.http.post<any>(this.api.time, this.time);
+    return this.http.post<ITime>(this.api.time, this.time);
   }
 }
